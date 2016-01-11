@@ -1,0 +1,6 @@
+[
+  { "title": "KnockoutJS", "drag": true },
+  { "title": "EmberJS", "drag": true },
+  { "title": "BackboneJS", "drag": true },
+  { "title": "AngularJS", "drag": true }
+]

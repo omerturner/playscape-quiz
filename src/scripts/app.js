@@ -1,0 +1,1 @@
+angular.module('drag-and-drop', ['ngDragDrop']);
