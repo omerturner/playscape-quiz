@@ -4,7 +4,7 @@ var express              = require("express"),
       mongoose         = require('mongoose'),
       todosController = require('./server/controller/todos-controller');
 
-mongoose.connect('mongodb://localhost:27017/todoListApp');
+//mongoose.connect('mongodb://localhost:27017/todoListApp');
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());

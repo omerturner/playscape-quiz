@@ -1,0 +1,36 @@
+body {
+  color: #2d3339;
+  font-family: "Varela Round";
+  text-align: center;
+  background: #edeff0;
+  font-size: 16px; 
+}
+
+h1 {
+	margin: 50px;
+}
+
+.thumbnail { 
+  height: 280px;
+}
+
+.btn-droppable {
+ margin: 10px 0;
+ width: 180px; 
+ height: 30px; 
+ padding-left: 4px;
+}
+
+.btn-draggable { 
+	margin: 10px 0;
+	width: 160px; 
+}
+
+.emage { 
+	height: 215px; 
+}
+
+.row-btn {
+	margin: auto;
+	max-width: 500px;
+}
