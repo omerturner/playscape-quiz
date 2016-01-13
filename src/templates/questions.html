@@ -1,27 +1,35 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in titles">
-      <p>{{item.title}}</p>
-      <div data-drop="true" ng-model="answers" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
-        <div ng-show="answers[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-          ng-model="answers" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
-          <img class="img-responsive" src="img/{{answers[$index].thumb}}"/>
-        </div>
-      </div>
-    </div>
+  <div class="ng-show" ng-show="result">
+    {{score}}/100
   </div>
 
-  <div class="row">
-    <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in questions">
-      <div data-drop="true" ng-model="questions" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
-        <div ng-show="questions[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-          ng-model="questions" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
-          <img class="img-responsive" src="img/{{questions[$index].thumb}}"/>
+  <div ng-hide="result">
+    <div class="row">
+      <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in titles">
+        <p>{{item.title}}</p>
+        <div data-drop="true" ng-model="answers" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
+          <div ng-show="answers[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            ng-model="answers" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
+            <img class="img-responsive" src="img/{{answers[$index].thumb}}"/>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in questions">
+        <div data-drop="true" ng-model="questions" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
+          <div ng-show="questions[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+            ng-model="questions" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
+            <img class="img-responsive" src="img/{{questions[$index].thumb}}"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" ng-click="submit()">Submit</button>
   </div>
 
 </div>

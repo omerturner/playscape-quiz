@@ -3,18 +3,34 @@
 angular.module('drag-and-drop')
 .controller('qusetionsCtrl', function($scope, dataService) {
 
+  $scope.result = false;
   $scope.titles = [];
   $scope.answers = [];
   $scope.questions = [];
 
   $scope.init = function(question)
   {
-    console.log(question);
+    $scope.results = question;
     angular.forEach(question, function(val, key) {
       $scope.titles.push({"title": val["title"]});
       $scope.answers.push({});
       $scope.questions.push({"thumb": val["thumb"], "idx": key});
     });
+  };
+
+  $scope.submit = function() {
+    var i = 0;
+    var score = 0;
+    angular.forEach($scope.answers, function(val, key) {
+      if (val.thumb) {
+        if ($scope.results[i].thumb == val.thumb) {
+          score += 25;
+        }
+      }
+      i++;
+    });
+    $scope.score = score;
+    $scope.result = true;
   };
 
   $scope.startCallback = function(event, ui, title) {
@@ -31,7 +47,6 @@ angular.module('drag-and-drop')
   };
 
   $scope.dropCallback = function(event, ui) {
-    console.log($scope.answers)
     // console.log('hey, you dumped me :-(' , $scope.draggedTitle);
   };
 

@@ -1,1 +1,1 @@
-angular.module('drag-and-drop', ['ngDragDrop']);
+angular.module('drag-and-drop', ['ngDragDrop', 'ngAnimate']);

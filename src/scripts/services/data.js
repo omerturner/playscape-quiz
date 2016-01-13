@@ -4,7 +4,7 @@ angular.module('drag-and-drop')
 .service('dataService', function($http) {
 
   this.getQuestions = function(callback){
-    $http.get('mock/questions.json')
+    $http.get('/api/questions/all')
     .then(callback)
   };
 

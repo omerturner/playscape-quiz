@@ -2,17 +2,15 @@ var express              = require("express"),
       app                    = express(),
       bodyParser        = require('body-parser'),
       mongoose         = require('mongoose'),
-      todosController = require('./server/controller/todos-controller');
+      questionsController = require('./server/controller/questions-controller');
 
-//mongoose.connect('mongodb://localhost:27017/todoListApp');
+mongoose.connect('mongodb://localhost:27017/playscapeQuiz');
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
 
 // REST API
-app.get('/api/todos/all', todosController.all);
-app.post('/api/todos/create', todosController.create);
-app.post('/api/todos/delete', todosController.delete);
+app.get('/api/questions/all', questionsController.all);
 
 app.listen(3000);
 console.log("Server running on port 3000");
