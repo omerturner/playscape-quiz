@@ -11,6 +11,7 @@ angular.module('drag-and-drop')
   $scope.init = function(question)
   {
     $scope.results = question;
+    console.log($scope.results)
     angular.forEach(question, function(val, key) {
       $scope.titles.push({"title": val["title"]});
       $scope.answers.push({});
@@ -22,15 +23,18 @@ angular.module('drag-and-drop')
     var i = 0;
     var score = 0;
     angular.forEach($scope.answers, function(val, key) {
+      $scope.results[i].wrong = true;
       if (val.thumb) {
         if ($scope.results[i].thumb == val.thumb) {
           score += 25;
+          $scope.results[i].correct = true;
+          $scope.results[i].wrong = false;
         }
       }
       i++;
     });
-    $scope.score = score;
     $scope.result = true;
+    $scope.score = score;
   };
 
   $scope.startCallback = function(event, ui, title) {

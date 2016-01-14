@@ -1,35 +1,39 @@
-
 <div>
 
-  <div class="ng-show" ng-show="result">
-    {{score}}/100
-  </div>
-
-  <div ng-hide="result">
+  <div>
     <div class="row">
       <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in titles">
         <p>{{item.title}}</p>
         <div data-drop="true" ng-model="answers" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
-          <div ng-show="answers[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+          <div ng-show="answers[$index].thumb" data-drag="!result" data-jqyoui-options="{revert: 'invalid'}"
             ng-model="answers" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
             <img class="img-responsive" src="img/{{answers[$index].thumb}}"/>
+          </div>
+          <div class="thumb-icon">
+            <i class="fa fa-check-circle-o big-icon" ng-show="results[$index].correct" style="color: green"></i>
+            <i class="fa fa-times-circle-o big-icon" ng-show="results[$index].wrong" style="color: red"></i>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row"  ng-hide="result">
       <div class="img-thumbnail col-md-3 col-xs-6" ng-repeat="item in questions">
         <div data-drop="true" ng-model="questions" jqyoui-droppable="{index: {{$index}}, onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}" style="min-height: 300px;">
           <div ng-show="questions[$index].thumb" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
             ng-model="questions" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
-            <img class="img-responsive" src="img/{{questions[$index].thumb}}"/>
+            <img class="img-responsive" src="img/{{questions[$index].thumb}}" style="height: 200px; width: 200px;"/>
           </div>
         </div>
       </div>
     </div>
 
-    <button class="btn btn-success" ng-click="submit()">Submit</button>
+    <button class="btn btn-success" ng-click="submit()" ng-hide="result">Submit</button>
+
+    <div class="ng-show" ng-show="result">
+      {{score}}%
+    </div>
+
   </div>
 
 </div>

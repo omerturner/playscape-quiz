@@ -34,3 +34,13 @@ h1 {
 	margin: auto;
 	max-width: 500px;
 }
+
+.thumb-icon {
+  position: absolute;
+  top: 0;
+  padding: 30% 20%;
+}
+
+.big-icon {
+    font-size: 180px;
+}
