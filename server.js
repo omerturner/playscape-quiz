@@ -9,6 +9,10 @@ mongoose.connect('mongodb://localhost:27017/playscapeQuiz');
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
 
+app.get('/login', function(req, res) {
+  res.sendFile(__dirname + '/src/login.html');
+});
+
 // REST API
 app.get('/api/questions/all', questionsController.all);
 
