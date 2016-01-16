@@ -1,13 +1,14 @@
-angular.module('drag-and-drop', ['ngDragDrop', 'ui.router'])
+angular.module("drag-and-drop", ["ngDragDrop", "ui.router"])
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
   $stateProvider
-  .state('admin', {
+  .state("admin", {
     url: "/admin",
-    templateUrl: "admin.html"
+    templateUrl: "admin.html",
   })
-  .state('quiz', {
+  .state("quiz", {
     url: "/quiz",
-    templateUrl: "quiz.html"
+    templateUrl: "quiz.html",
+    controller: "mainCtrl"
   });
 });

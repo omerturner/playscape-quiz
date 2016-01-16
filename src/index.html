@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='styles/main.css' rel='stylesheet' type="text/css">
   </head>
-  <body ng-app>
-    <div  class="container" ui-view>
+  <body ng-app="drag-and-drop">
 
+    <div  class="container" ui-view>
         <div ng-controller="loginCtrl">
           <h1>Login</h1>
             <label for="username">Username:</label>
@@ -20,13 +20,12 @@
             <input type="password" id="password" ng-model="password"><hr>
           <button class="btn btn-success" ng-click="submit()">Login</button>
         </div>
-        
-    </div>
+      </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="vendor/angular.js"></script>
-    <script src="vendor/angular-dragdrop.min.js"></script>    
+    <script src="vendor/angular-dragdrop.min.js"></script>
     <script src="vendor/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
@@ -38,7 +37,5 @@
     <script src="scripts/directives/questions.js"></script>
     <script src="scripts/js/myApp.js"></script>
   </body>
-
-  <footer></footer>
 </html>
 
