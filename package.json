@@ -1,12 +1,14 @@
 {
-  "name": "PlayScape Quiz",
+  "name": "PlayScape-Quiz",
   "version": "1.0.0",
   "description": "PlayScape Quiz App",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "connect-multiparty": "^2.0.0",
     "express": "^4.13.3",
-    "mongoose": "^4.3.4"
+    "mongoose": "^4.3.4",
+    "mv": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {

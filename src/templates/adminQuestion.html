@@ -1,0 +1,15 @@
+<div>
+  <div class="row">
+    <div class="col-md-3 col-xs-6" ng-repeat="t in [1,2,3,4]">
+
+      <div ngf-drop ngf-select ng-model="files" class="drop-box"
+          ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+          accept="image/*,application/pdf"
+          ngf-pattern="'image/*,application/pdf'">Drop image here</div>
+      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+      <input type="text" placeholder="Caption" ng-model="caption"><br/>
+    </div>
+  </div>
+  <hr>
+  <button class="btn btn-info" ng-click="post()">Upload</button>
+</div>
